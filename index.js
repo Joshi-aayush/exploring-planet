@@ -1,7 +1,7 @@
 const parse = require("csv-parse");
 const fs = require("fs");
 
-const habitablePlanets = [];
+const habitablePlanet = [];
 
 function isHabitablePlanet(planet) {
   return (
@@ -21,7 +21,7 @@ fs.createReadStream("kepler_data.csv")
   )
   .on("data", (data) => {
     if (isHabitablePlanet(data)) {
-      habitablePlanets.push(data);
+      habitablePlanet.push(data);
     }
   })
   .on("error", (err) => {
